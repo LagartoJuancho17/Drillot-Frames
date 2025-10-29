@@ -189,4 +189,23 @@ document.addEventListener("DOMContentLoaded", () => {
       isMenuOpen = false;
     }
   });
+
+  const menuLinks = document.querySelectorAll(".menu-col a");
+
+  let dynamicImage = document.createElement("img");
+  dynamicImage.style.width = "100%";
+  dynamicImage.style.height = "100%";
+  dynamicImage.style.objectFit = "cover";
+  dynamicImage.style.transition = "opacity 0.3s ease-in-out";
+  dynamicImage.style.opacity = 0;
+  dynamicImage.src = "/public/img3.jpg";
+  dynamicImage.style.opacity = 1;
+  menuMediaWrapper.appendChild(dynamicImage);
+
+  menuLinks.forEach((link, index) => {
+    link.addEventListener("mouseenter", () => {
+      dynamicImage.src = `/public/img${index + 1}.jpg`;
+      dynamicImage.style.opacity = 1;
+    });
+  });
 });

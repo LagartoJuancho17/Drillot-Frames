@@ -61,6 +61,8 @@ a {
   display: block;
 }
 
+
+
 .preloader {
   position: fixed;
   top: 0;
@@ -511,4 +513,8 @@ nav {
   .menu-tag a {
     font-size: 1.25rem;
   }
+}
+
+a:hover {
+  color: #000000; /* Negro puro */
 }
