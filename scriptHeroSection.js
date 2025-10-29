@@ -212,5 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     "<"
   );
+
+  document.querySelector(".preloader-header a").addEventListener("click", (e) => {
+    e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Desplazamiento suave hacia arriba
+  });
 });
 

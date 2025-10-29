@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Manrope:wght@200..800&display=swap");
 
+@font-face {
+  font-family: "Thunder";
+  src: url(/public/fonts/Thunder-SemiBoldHC.otf) format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 :root {
   --light: #fff;
   --dark: #000;
@@ -14,7 +21,7 @@
 }
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Thunder", sans-serif;
   background-color: var(--light);
 }
 
@@ -28,7 +35,7 @@ h1 {
   text-transform: uppercase;
   font-size: 8rem;
   line-height: 1;
-  letter-spacing: -0.5rem;
+  letter-spacing: 0.5rem;
 }
 
 p {
@@ -262,20 +269,6 @@ section .img {
   color: black;
 }
 
-@media (max-width: 1000px) {
-  .intro h1,
-  .outro h1,
-  .spotlight-intro-header,
-  .spotlight-outro-header {
-    width: 100%;
-  }
-
-  .spotlight-intro-header,
-  .spotlight-outro-header {
-    padding: 2rem;
-  }
-}
-
 .spotlight-outro-header h1
 {
   font-size: 3rem;
@@ -286,3 +279,20 @@ section .img {
   left: 28%;
   text-align: left;
 }
+
+@media (max-width: 1000px) {
+  .intro h1,
+  .outro h1,
+  .spotlight-intro-header,
+  .spotlight-outro-header {
+    width: 100%;
+    left: 50%;
+    text-align: center;
+  }
+
+  .spotlight-intro-header,
+  .spotlight-outro-header {
+    padding: 2rem;
+  }
+}
+
