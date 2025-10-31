@@ -480,6 +480,16 @@ nav {
   will-change: transform;
 }
 
+.menu-tag span {
+  font-size: 5rem;
+  margin-left: -1rem;
+  font-weight: 800;
+}
+
+.menu-tag:nth-child(1):hover {
+  color: red;
+}
+
 @media (max-width: 1000px) {
   h1 {
     font-size: 3rem;
@@ -517,4 +527,95 @@ nav {
 
 a:hover {
   color: #000000; /* Negro puro */
+}
+
+
+.main-gallery {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.main-gallery-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 40px;
+}
+
+.main-carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main-carousel {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  min-width: 280px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-info {
+  padding: 15px 10px;
+}
+
+.card-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin: 10px 0 5px;
+}
+
+.card-info p {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #444;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: #f1f1f1;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
 }
