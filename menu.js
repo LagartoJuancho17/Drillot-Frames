@@ -208,4 +208,61 @@ document.addEventListener("DOMContentLoaded", () => {
       dynamicImage.style.opacity = 1;
     });
   });
+
+  const comprarLink = document.querySelector(".menu-tag a[href='#']");
+  const menuCol = comprarLink.closest(".menu-col");
+
+  // Crear el submenu dinámicamente
+  const submenu = document.createElement("div");
+  submenu.classList.add("submenu");
+  submenu.innerHTML = `
+    <ul>
+      <li class="sub-menu-li" ><a href="#">Organico</a></li>
+      <li class="sub-menu-li" ><a href="#">Minimalista</a></li>
+      <li class="sub-menu-li" ><a href="#">Queso</a></li>
+      <li class="sub-menu-li" ><a href="#">Marcos</a></li>
+      <li class="sub-menu-li" ><a href="#">Juan</a></li>
+    </ul>
+  `;
+  menuCol.appendChild(submenu);
+
+  // Estilo inicial del submenu
+  gsap.set(submenu, { height: 0, opacity: 0, overflow: "hidden" });
+
+  let isSubmenuOpen = false;
+
+  // Ocultar los botones "Inspirate", "Reviews" y "Acerca De" con `content-visibility: hidden` cuando se despliega el submenu
+  const otherButtons = document.querySelectorAll(".nav-buttons");
+
+  comprarLink.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (!isSubmenuOpen) {
+      // Mostrar el submenu y ocultar otros botones
+      gsap.to(submenu, {
+        height: "auto",
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+      otherButtons.forEach((button) => {
+        if (!button.contains(submenu)) {
+          button.style.contentVisibility = "hidden";
+        }
+      });
+      isSubmenuOpen = true;
+    } else {
+      // Ocultar el submenu y mostrar otros botones
+      gsap.to(submenu, {
+        height: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+      });
+      otherButtons.forEach((button) => {
+        button.style.contentVisibility = "visible";
+      });
+      isSubmenuOpen = false;
+    }
+  });
 });
