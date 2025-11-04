@@ -234,6 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ocultar los botones "Inspirate", "Reviews" y "Acerca De" con `content-visibility: hidden` cuando se despliega el submenu
   const otherButtons = document.querySelectorAll(".nav-buttons");
 
+
   comprarLink.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -264,5 +265,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       isSubmenuOpen = false;
     }
+
+    const anyVisible = Array.from(otherButtons).some((button) => button.getComputedStyle().contentVisibility === "visible");
+
+    submenu.style.contentVisibility = anyVisible ? "hidden" : "visible";
+
   });
 });

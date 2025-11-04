@@ -632,23 +632,11 @@ a:hover {
 
 /* STYLE CARD SECTION */
 
-section h4 {
-  opacity: 0.8;
-}
-
-li.active {
-  color: var(--dark-green);
-  border-bottom: 1px solid var(--dark-green);
-}
-
 .style-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
   background-color: var(--white);
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .style-card-info {
@@ -657,26 +645,27 @@ li.active {
   padding: 1em 2em;
 }
 .style-card-info h1 {
-  font-family: "Allura", serif;
+  font-family: "Thunder", sans-serif;
   font-size: 5rem;
-  color: var(--dark-green);
+  color: black;
   align-self: center;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .style-card-info p {
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 2.5rem;
   align-self: center;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  line-height: 22px;
+  font-family: "Agdasima", sans-serif;
+  text-align: left;
 }
 .style-card-info a {
   display: grid;
+  font-family: "Thunder", sans-serif;
   grid-template-columns: max-content 20px;
   align-items: center;
   column-gap: 7px;
-  color: var(--dark-green);
-  font-size: 0.85rem;
+  color: var(--dark);
+  font-size: 1rem;
   font-weight: bold;
   align-self: center;
   justify-self: flex-end;
@@ -700,7 +689,6 @@ li.active {
 }
 
 .style-card-photo {
-  width: 450px;
   object-fit: cover;
   position: relative;
   overflow: hidden;
@@ -789,3 +777,11 @@ li.active {
     font-size: 3rem;
   }
 }
+
+.style-card-photo { position: relative; overflow: hidden; }
+.style-card-photo .photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: 0; /* por defecto ocultas */
+}
+.style-card-photo .photo.is-active { opacity: 1; }
