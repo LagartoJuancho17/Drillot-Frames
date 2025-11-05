@@ -101,9 +101,7 @@
     </section>
     <!--GALLERY 2-->
     <div id="gallery2">
-    <section class="intro">
-      <h1>Porque tus paredes merecen algo más que decoración</h1>
-    </section>
+    
     <section class="spotlight">
       <div class="spotlight-images">
         <div class="img imgGallery2"><img src="/img_1.jpg" alt="" /></div>
@@ -142,44 +140,41 @@
     </section>
     </div>
 
-    <!-- CARD SECTION -->
-    <section class="styles-card-section">
-      <div class="style-card">
-        <div class="style-card-info">
-          <h1 id="style-card-info-title"></h1>
-          <p id="style-card-info-desc"></p>
-          <a href="">
-            <p>More details</p>
-            <svg viewBox="0 0 20 10">
-              <line x1="0" y1="5" x2="20" y2="5" />
-              <line x1="15" y1="0" x2="20" y2="5" />
-              <line x1="15" y1="10" x2="20" y2="5" />
-            </svg>
-          </a>
-        </div>
-        <div class="style-card-photo">
-          <div id="mask-1" class="mask"></div>
-          <div id="mask-2" class="mask"></div>
-          <a id="next-card-btn"  type="button">
-              <p>Next</p>
-            <svg viewBox="0 0 20 10">
-              <line x1="0" y1="5" x2="20" y2="5" />
-              <line x1="15" y1="0" x2="20" y2="5" />
-              <line x1="15" y1="10" x2="20" y2="5" />
-            </svg>
-          </a>
-          <img src="">
-        </div>
+    <section class="estilos-section">
+    <div class="estilos-card">
+      <div class="estilos-card-info">
+        <h1 id="estilos-card-info-title">{{ currentCard.title }}</h1>
+        <p id="estilos-card-info-desc">{{ currentCard.desc }}</p>
+        <a href="#">
+          <p>More details</p>
+          <svg viewBox="0 0 20 10">
+            <line x1="0" y1="5" x2="20" y2="5" />
+            <line x1="15" y1="0" x2="20" y2="5" />
+            <line x1="15" y1="10" x2="20" y2="5" />
+          </svg>
+        </a>
       </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-
+      <div class="estilos-card-photo">
+        <div id="mask-1" class="mask"></div>
+        <div id="mask-2" class="mask"></div>
+        <a href="#" @click.prevent="nextCard">
+          <p id="next-estilo">Next</p>
+          <svg viewBox="0 0 20 10">
+            <line x1="0" y1="5" x2="20" y2="5" />
+            <line x1="15" y1="0" x2="20" y2="5" />
+            <line x1="15" y1="10" x2="20" y2="5" />
+          </svg>
+        </a>
+        <img :src="currentCard.photo">
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script type="module" src="/styleCardSection.js"></script>
     <script type="module" src="/scriptHeroSection.js"></script>
     <script type="module" src="/scriptGallery2.js"></script>
     <script type="module" src="/smoothScroll.js"></script>
     <script type="module" src="/menu.js"></script>
     <script type="module" src="/mainCarousel.js"></script>
-    
   </body>
 </html>

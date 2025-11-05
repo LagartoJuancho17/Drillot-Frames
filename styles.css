@@ -274,11 +274,12 @@ section .img {
 .spotlight-outro-header {
   z-index: 2;
   color: black;
+  width: 45%;
 }
 
 .spotlight-outro-header h1
 {
-  font-size: 3rem;
+  font-size: 6rem;
   color: var(--light);
 }
 
@@ -538,7 +539,6 @@ a:hover {
 .main-gallery-title {
   font-size: 3.5rem;
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
   margin-bottom: 40px;
 }
 
@@ -632,73 +632,75 @@ a:hover {
 
 /* STYLE CARD SECTION */
 
-.style-card {
+.estilos-section{
+  height: 86svh;
+}
+
+.estilos-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-auto-rows: auto;
   background-color: var(--white);
 }
 
-.style-card-info {
+.estilos-card-info {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   padding: 1em 2em;
 }
-.style-card-info h1 {
-  font-family: "Thunder", sans-serif;
-  font-size: 5rem;
-  color: black;
+.estilos-card-info h1 {
+  font-size: 8rem;
   align-self: center;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-.style-card-info p {
-  font-size: 2.5rem;
-  align-self: center;
+.estilos-card-info p {
+  font-size: 2rem;
+  font-weight: bold;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-family: "Agdasima", sans-serif;
   text-align: left;
 }
-.style-card-info a {
+
+#next-estilo {
+  font-size: 2rem;
+  color: var(--bg);
+  background-color: rgba(0, 0, 0, 0.767);
+  width: 130%;
+}
+
+.estilos-card-info a {
   display: grid;
-  font-family: "Thunder", sans-serif;
   grid-template-columns: max-content 20px;
   align-items: center;
   column-gap: 7px;
   color: var(--dark);
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: bold;
   align-self: center;
   justify-self: flex-end;
-  transform: translateX(0px);
+  transform: translateY(122px);
   transition: transform 0.3s 0.1s ease-out;
 }
-.style-card-info a:hover {
-  transform: translateX(5px);
-}
-.style-card-info a:hover svg {
-  transform: translateX(5px);
-}
-.style-card-info svg {
+
+.estilos-card-info svg {
   width: 20px;
   height: 10px;
   transform: translateX(0px);
   transition: transform 0.3s ease-out;
 }
-.style-card-info svg line {
-  stroke: var(--dark-green);
-}
 
-.style-card-photo {
+.estilos-card-photo {
+  width: 750px;
   object-fit: cover;
   position: relative;
   overflow: hidden;
 }
-.style-card-photo img {
+.estilos-card-photo img {
   display: block;
   max-width: 100%;
   aspect-ratio: 1/1;
 }
-.style-card-photo a {
+.estilos-card-photo a {
   display: grid;
   grid-template-columns: max-content 20px;
   align-items: center;
@@ -715,29 +717,25 @@ a:hover {
   bottom: 5%;
   right: 8%;
 }
-.style-card-photo a:hover {
-  transform: translateX(5px);
+.estilos-card-photo a:hover {
+  transform: translateX(5px) scale(1.4);
+  transition: transform 0.3s ease-out;
 }
-.style-card-photo a:hover svg {
-  transform: translateX(5px);
-}
-.style-card-photo svg {
+
+.estilos-card-photo svg {
   width: 20px;
   height: 10px;
   transform: translateX(0px);
   transition: transform 0.3s ease-out;
 }
-.style-card-photo svg line {
-  stroke: var(--white);
-  stroke-width: 2;
-}
-.style-card-photo .mask {
+
+.estilos-card-photo .mask {
   position: absolute;
   top: 0;
   height: 100%;
   width: 50%;
   z-index: 5;
-  background-color: var(--white);
+  background-color: var(--bg);
 }
 #mask-1 {
   left: 0;
@@ -749,39 +747,31 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-  .style-card {
+  .estilos-card {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
-  .style-card-info {
+  .estilos-card-info {
     order: 2;
     height: 400px;
   }
-  .style-card-photo {
+  .estilos-card-photo {
     width: 100%;
     order: 1;
   }
 
-  .style-card-photo img {
+  .estilos-card-photo img {
     width: 100%;
   }
 
-  .style-card-photo .mask {
+  .estilos-card-photo .mask {
     height: 100%;
   }
 }
 
 @media (max-width: 500px) {
-  .style-card-info h1 {
+  .estilos-card-info h1 {
     font-size: 3rem;
   }
 }
-
-.style-card-photo { position: relative; overflow: hidden; }
-.style-card-photo .photo {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  opacity: 0; /* por defecto ocultas */
-}
-.style-card-photo .photo.is-active { opacity: 1; }
