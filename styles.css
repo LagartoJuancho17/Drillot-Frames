@@ -632,8 +632,9 @@ a:hover {
 
 /* STYLE CARD SECTION */
 
-.estilos-section{
-  height: 86svh;
+.estilos-section {
+  display: grid;
+  place-items: center;
 }
 
 .estilos-card {
