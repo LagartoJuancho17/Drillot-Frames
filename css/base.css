@@ -12,6 +12,7 @@ img{
   border-style:none;
   object-fit: cover; 
 }
+html { scroll-behavior: auto !important; }
 
 
 *,*:after,*:before{
@@ -224,4 +225,56 @@ img{
   justify-content:space-between;
   color:#000;
   font-size:12px;
-  text-transform:uppercase}
+  text-transform:uppercase
+}
+
+
+/* SECCIÓN PRINCIPAL */
+.minimalist-section {
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.minimalist-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 80px;
+}
+
+/* IMAGEN */
+.minimalist-image img {
+  width: 100%;
+  max-width: 550px;
+}
+
+/* TEXTO */
+.minimalist-text {
+  max-width: 500px;
+}
+
+.minimalist-text h2 {
+  font-size: 8rem;
+}
+
+.minimalist-text p {
+    font-family: "Agdasima", sans-serif;
+  font-size: 2rem;
+  text-align: left;
+  color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .minimalist-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .minimalist-text h2 {
+    font-size: 48px;
+  }
+}

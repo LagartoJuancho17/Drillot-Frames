@@ -6,6 +6,8 @@
     <title>Galeria| Tobias Arraiza</title>
     <meta name="author" content="Tobias Arraiza" />
     <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios" />
     <script>
       document.documentElement.className = 'js'
     </script>
@@ -16,6 +18,66 @@
       <header class="frame">
         <h1 class="frame__title">Galeria Cool</h1>
       </header>
+      <nav>
+        <div class="menu-bar">
+          <div class="menu-logo">
+            <a href="#"><img src="/logo.png" alt="" /></a>
+          </div>
+          <div class="menu-toggle-btn">
+            <div class="menu-toggle-label"><p>Menu</p></div>
+            <div class="menu-hamburger-icon">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-overlay">
+          <div class="menu-overlay-content">
+            <div class="menu-media-wrapper">
+            </div>
+            <div class="menu-content-wrapper">
+              <div class="menu-content-main">
+  
+                <div class="menu-col">
+                  <div class="menu-tag "><a href="#">Comprar <span class="material-symbols-outlined">arrow_forward_ios</span></a></div>
+                  <div class="menu-tag nav-buttons"><a href="#">Inspirate</a></div>
+                  <div class="menu-tag nav-buttons"><a href="#">Reviews</a></div>
+                  <div class="menu-tag nav-buttons"><a href="#">Acerca De</a></div>
+                </div>
+              </div>
+              <div class="menu-footer">
+                <div class="menu-col">
+                  <p>Buenos Aires, Argentina</p>
+                </div>
+                <div class="menu-col">
+                  <p>+54 11 3803 2652</p>
+                  <p>tobiasarraiza17@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section class="minimalist-section">
+        <div class="minimalist-container">
+      
+          <!-- IMAGEN -->
+          <div class="minimalist-image">
+            <img src="/public/img2.jpg" alt="Minimalist Poster">
+          </div>
+      
+          <!-- TEXTO -->
+          <div class="minimalist-text">
+            <h2>Minimalist</h2>
+            <p>
+              Less is more. And that’s exactly what these designs are all about.
+              The simplest compositions made from the most basic shapes.
+              They work nicely as anchors in a gallery wall or as standalone pieces.
+            </p>
+          </div>
+      
+        </div>
+      </section>
       <div class="content">
         <div class="products">
           <ul class="products__grid">
@@ -119,5 +181,6 @@
     <script type="module" src="./js/product-grid.js"></script>
     <script type="module" src="./js/utils.js"></script>
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="/menu.js"></script>
   </body>
 </html>
