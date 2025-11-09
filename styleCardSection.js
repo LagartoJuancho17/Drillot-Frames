@@ -1,4 +1,5 @@
-import gsap from "gsap";
+const gsap = window.gsap;
+
 // Datos
 var cards = [
   {
@@ -36,17 +37,15 @@ var cards = [
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Referencias DOM según TU index.html
-  var $title = document.getElementById("estilos-card-info-title");
-  var $desc  = document.getElementById("estilos-card-info-desc");
-  var $img   = document.querySelector(".estilos-card-photo img");      // << sin #id
-  var $next  = document.querySelector(".estilos-card-photo > a");      // << el link "Next" dentro de la foto
+  var title = document.getElementById("estilos-card-info-title");
+  var desc  = document.getElementById("estilos-card-info-desc");
+  var img   = document.querySelector(".estilos-card-photo img");      // << sin #id
+  var next  = document.querySelector(".estilos-card-photo > a");      // << el link "Next" dentro de la foto
 
-  var $mask1 = document.getElementById("mask-1");
-  var $mask2 = document.getElementById("mask-2");
+  var mask1 = document.getElementById("mask-1");
+  var mask2 = document.getElementById("mask-2");
 
-  if (!$title || !$desc || !$img || !$next || !$mask1 || !$mask2) {
-    console.error("Faltan elementos del DOM requeridos. Verifica IDs/clases en el HTML.");
+  if (!title || !desc || !img || !next || !mask1 || !mask2) {
     return;
   }
 
@@ -54,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function renderCard() {
     var card = cards[currentNum];
-    $title.textContent = card.title;         // Reemplaza {{ currentCard.title }}
-    $desc.textContent  = card.desc;          // Reemplaza {{ currentCard.desc }}
-    $img.setAttribute("src", card.photo);    // Reemplaza :src="currentCard.photo"
+    title.textContent = card.title;         // Reemplaza {{ currentCard.title }}
+    desc.textContent  = card.desc;          // Reemplaza {{ currentCard.desc }}
+    img.setAttribute("src", card.photo);    // Reemplaza :src="currentCard.photo"
   }
 
   // Animación: oculta texto y barre máscaras (desde sus posiciones iniciales definidas en CSS)
@@ -69,19 +68,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    tl.to($mask1, { yPercent: 100, scaleY: 1.4 })
-      .to($mask2, { yPercent: -100, scaleY: 1.4 }, "<")
-      .to($title, { clipPath: "polygon(0 0, 100% 0, 100% 0%, 0% 0%)" }, "<0.4")
-      .to($desc,  { clipPath: "polygon(0 0, 100% 0, 100% 0%, 0% 0%)" }, "<0.3");
+    tl.to(mask1, { yPercent: 100, scaleY: 1.4 })
+      .to(mask2, { yPercent: -100, scaleY: 1.4 }, "<")
+      .to(title, { clipPath: "polygon(0 0, 100% 0, 100% 0%, 0% 0%)" }, "<0.4")
+      .to(desc,  { clipPath: "polygon(0 0, 100% 0, 100% 0%, 0% 0%)" }, "<0.3");
   }
 
   // Cambia el contenido y revela cuando la imagen cargó (evita parpadeos)
   function swapAndReveal() {
     function handleLoad() {
-      $img.removeEventListener("load", handleLoad);
+      img.removeEventListener("load", handleLoad);
       playReverse();
     }
-    $img.addEventListener("load", handleLoad);
+    img.addEventListener("load", handleLoad);
     renderCard();
   }
 
@@ -89,16 +88,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function playReverse() {
     var tl = gsap.timeline({ defaults: { duration: 0.7, ease: "sine.in" } });
 
-    tl.to($mask1, { yPercent: -100, scaleY: 1.4 })
-      .to($mask2, { yPercent: 100,  scaleY: 1.4 }, "<")
-      .to($title, { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }, "<0.2")
-      .to($desc,  { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }, "<0.3")
+    tl.to(mask1, { yPercent: -100, scaleY: 1.4 })
+      .to(mask2, { yPercent: 100,  scaleY: 1.4 }, "<")
+      .to(title, { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }, "<0.2")
+      .to(desc,  { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }, "<0.3")
       // Dejar listas para el próximo ciclo (posición neutra)
-      .set([$mask1, $mask2], { yPercent: 0, scaleY: 1 });
+      .set([mask1, mask2], { yPercent: 0, scaleY: 1 });
   }
 
   // Click en "Next" (reemplaza @click.prevent="nextCard")
-  $next.addEventListener("click", function (e) {
+  next.addEventListener("click", function (e) {
     e.preventDefault();
     playForward();
   });

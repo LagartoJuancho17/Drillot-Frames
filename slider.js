@@ -20,18 +20,16 @@ function initSlider(){
   let activeElement;
   const totalSlides = slides.length;
 
-  // Update total slides text, prepend 0 if less than 10
   totalElement.textContent = totalSlides < 10 ? `0${totalSlides}` : totalSlides;
 
-  // Create step elements dynamically
-  stepsParent.innerHTML = ''; // Clear any existing steps
+  stepsParent.innerHTML = ''; 
   slides.forEach((_, index) => {
-    const stepClone = stepElement.cloneNode(true); // Clone the single step
+    const stepClone = stepElement.cloneNode(true); 
     stepClone.textContent = index + 1 < 10 ? `0${index + 1}` : index + 1;
-    stepsParent.appendChild(stepClone); // Append to the parent container
+    stepsParent.appendChild(stepClone); 
   });
 
-  // Dynamically generated steps
+
   const allSteps = stepsParent.querySelectorAll('[data-slide-count="step"]');
   
   const loop = horizontalLoop(slides, {
@@ -40,18 +38,16 @@ function initSlider(){
     center: false,
     onChange: (element, index) => { 
       
-      // We add the active class to the 'next' element because our design is offset slightly.
+
       activeElement && activeElement.classList.remove("active");
       const nextSibling = element.nextElementSibling || slides[0]; 
       nextSibling.classList.add("active");
       activeElement = nextSibling;
       
-      // Move the number to the correct spot
       gsap.to(allSteps, { y: `${-100 * index}%`, ease: "power3", duration: 0.45 });
     }
   });
   
-  // Similar to above, we substract 1 from our clicked index on click because our design is offset
   slides.forEach((slide, i) => slide.addEventListener("click", () => loop.toIndex(i - 1, {ease:"power3",duration: 0.725})));
   
   nextButton.addEventListener("click", () => loop.next({ease:"power3", duration: 0.725}));
@@ -83,7 +79,7 @@ function horizontalLoop(items, config) {
       indexIsDirty = false,
       center = config.center,
       pixelsPerSecond = (config.speed || 1) * 100,
-      snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+      snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), 
       timeOffset = 0,
       container = center === true ? items[0].parentNode : gsap.utils.toArray(center)[0] || items[0].parentNode,
       totalWidth,
@@ -97,7 +93,7 @@ function horizontalLoop(items, config) {
           spaceBefore[i] = b2.left - (i ? b1.right : b1.left);
           b1 = b2;
         });
-        gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
+        gsap.set(items, { 
           xPercent: i => xPercents[i]
         });
         totalWidth = getTotalWidth();
@@ -157,10 +153,10 @@ function horizontalLoop(items, config) {
     window.addEventListener("resize", onResize);
     function toIndex(index, vars) {
       vars = vars || {};
-      (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
+      (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); 
       let newIndex = gsap.utils.wrap(0, length, index),
         time = times[newIndex];
-      if (time > tl.time() !== index > curIndex && index !== curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
+      if (time > tl.time() !== index > curIndex && index !== curIndex) { 
         time += tl.duration() * (index > curIndex ? 1 : -1);
       }
       if (time < 0 || time > tl.duration()) {
@@ -184,7 +180,7 @@ function horizontalLoop(items, config) {
     tl.next = vars => toIndex(tl.current()+1, vars);
     tl.previous = vars => toIndex(tl.current()-1, vars);
     tl.times = times;
-    tl.progress(1, true).progress(0, true); // pre-render for performance
+    tl.progress(1, true).progress(0, true); 
     if (config.reversed) {
       tl.vars.onReverseComplete();
       tl.reverse();
@@ -195,7 +191,7 @@ function horizontalLoop(items, config) {
         ratio, startProgress, draggable, dragSnap, lastSnap, initChangeX, wasPlaying,
         align = () => tl.progress(wrap(startProgress + (draggable.startX - draggable.x) * ratio)),
         syncIndex = () => tl.closestIndex(true);
-      typeof(InertiaPlugin) === "undefined" && console.warn("InertiaPlugin required for momentum-based scrolling and snapping. https://greensock.com/club");
+      typeof(InertiaPlugin) === "undefined" && console.warn("Queso");
       draggable = Draggable.create(proxy, {
         trigger: items[0].parentNode,
         type: "x",
