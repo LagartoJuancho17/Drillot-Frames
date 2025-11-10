@@ -217,11 +217,11 @@ document.addEventListener("DOMContentLoaded", () => {
   submenu.classList.add("submenu");
   submenu.innerHTML = `
     <ul>
-      <li class="sub-menu-li" ><a href="#">Organico</a></li>
-      <li class="sub-menu-li" ><a href="#">Minimalista</a></li>
-      <li class="sub-menu-li" ><a href="#">Queso</a></li>
-      <li class="sub-menu-li" ><a href="#">Marcos</a></li>
-      <li class="sub-menu-li" ><a href="#">Juan</a></li>
+      <li class="sub-menu-li" ><a href="/galeria.html">Organico</a></li>
+      <li class="sub-menu-li" ><a href="/galeria.html">Minimalista</a></li>
+      <li class="sub-menu-li" ><a href="/galeria.html">Queso</a></li>
+      <li class="sub-menu-li" ><a href="/galeria.html">Marcos</a></li>
+      <li class="sub-menu-li" ><a href="/galeria.html">Juan</a></li>
     </ul>
   `;
   menuCol.appendChild(submenu);

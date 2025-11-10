@@ -123,8 +123,13 @@ a {
   bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 30%;
-  color: #fff;
+  width: 100%;
+}
+
+.preloader-copy p {
+  color: var(--light);
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .preloader-header {
@@ -527,14 +532,14 @@ nav {
   }
 }
 
-a:hover {
+nav a:hover {
   color: #000000; /* Negro puro */
 }
 
 
 .main-gallery {
   text-align: center;
-  padding: 60px 0;
+  margin-bottom: 10%;
 }
 
 .main-gallery-title {
@@ -548,7 +553,6 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   width: 90%;
   margin: 0 auto;
 }
@@ -556,21 +560,19 @@ a:hover {
 .main-carousel {
   display: flex;
   gap: 40px;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
+  overflow: visible;
 }
 
 .card {
-  min-width: 280px;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  text-align: center;
-  overflow: hidden;
+  min-width: 380px;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(105%);
 }
 
 .card img {
@@ -578,21 +580,28 @@ a:hover {
   display: block;
 }
 
-.card-info {
-  padding: 15px 10px;
+.card-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3%;
 }
 
 .card-info h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  margin: 10px 0 5px;
+  font-size: 2rem;
 }
 
 .card-info p {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
   font-weight: 500;
   font-size: 1rem;
   color: #444;
 }
+
+
+
 
 .arrow {
   position: absolute;
@@ -607,6 +616,7 @@ a:hover {
   height: 50px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   transition: background 0.3s ease;
+  z-index: 100;
 }
 
 .arrow:hover {
