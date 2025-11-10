@@ -854,7 +854,6 @@ footer {
 .object {
   position: absolute;
   width: 300px;
-  font-weight: 500;
   background-color: #fff;
   color: #0f0f0f;
   padding: 1rem 2rem;

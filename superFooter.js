@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function populateObjects(container, images, opts = {}) {
     const {
-      width = 140,
-      height = 60,
+      width = 200,
+      height = 300,
       borderRadius = 12,
-      bgSize = "contain",
+      bgSize = "cover",
     } = opts;
 
     container.innerHTML = "";
@@ -289,10 +289,10 @@ document.addEventListener("DOMContentLoaded", () => {
         await preloadImages(imageURLs);
         // 2) Crea los .object
         populateObjects(container, imageURLs, {
-          width: 160,   // ajustá tamaño a gusto
-          height: 80,
+          width: 200,   // ajustá tamaño a gusto
+          height: 300,
           borderRadius: 14,
-          bgSize: "contain", // o "cover"
+          bgSize: "cover", // o "cover"
         });
         // 3) Inicializa Matter
         initPhysics(container);
