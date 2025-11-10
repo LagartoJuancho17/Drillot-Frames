@@ -865,11 +865,6 @@ footer {
   z-index: 2;
 }
 
-.object p{
-  font-family: 'Agdasima', sans-serif;
-  font-size: 3rem;
-}
-
 .object:active {
   cursor: grabbing;
 }
@@ -937,7 +932,7 @@ footer {
   align-items: center;
   overflow: hidden;
   border: 2px solid var(--dark);
-  left: 40px;
+  right: 40px;
   bottom: 10px;
   z-index: 10;
   width: 6em;
@@ -952,3 +947,4 @@ footer {
   margin: auto;
   height: 4rem;
 }
+
