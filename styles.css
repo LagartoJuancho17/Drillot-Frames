@@ -493,13 +493,14 @@ nav {
   font-weight: 800;
 }
 
+
 .menu-tag:nth-child(1):hover {
   color: red;
 }
 
 @media (max-width: 1000px) {
   h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     letter-spacing: -0.05rem;
   }
 
@@ -528,9 +529,14 @@ nav {
   }
 
   .menu-tag a {
-    font-size: 1.25rem;
+    font-size: 3rem;
   }
+  .menu-tag span {
+    font-size: 2rem;
+    margin-left: 0rem;
 }
+}
+
 
 nav a:hover {
   color: #000000; /* Negro puro */
@@ -601,7 +607,23 @@ nav a:hover {
 }
 
 
+@media (max-width: 1000px) {
+  .card-info{
+    justify-content: space-around;
+    font-size: 1rem;
+  }
+} 
 
+
+
+.card:not(.active) .card-info {
+  scale: 80%;
+}
+
+.card .active .card-info {
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.4s;
+  transform:  scale(100%);
+}
 
 .arrow {
   position: absolute;
@@ -785,5 +807,84 @@ nav a:hover {
 @media (max-width: 500px) {
   .estilos-card-info h1 {
     font-size: 3rem;
+  }
+}
+
+
+
+/*FOOTER*/
+footer {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.footer {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.footer-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.footer-content * {
+  pointer-events: auto;
+}
+
+.object-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.object {
+  position: absolute;
+  width: 300px;
+  font-weight: 500;
+  background-color: #fff;
+  color: #0f0f0f;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  cursor: grab;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.object p{
+  font-family: 'Agdasima', sans-serif;
+  font-size: 3rem;
+}
+
+.object:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .hero h1,
+  .footer h1 {
+    width: 100%;
+  }
+
+  .object {
+    font-size: 1rem;
   }
 }

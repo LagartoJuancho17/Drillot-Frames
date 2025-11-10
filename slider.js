@@ -7,12 +7,11 @@ gsap.registerPlugin(Draggable, InertiaPlugin)
 
 function initSlider(){
 
-  const wrapper = document.querySelector('[data-slider="list"]')  
   const slides = gsap.utils.toArray('[data-slider="slide"]');
   
   const nextButton = document.querySelector('[data-slider="button-next"]')
   const prevButton = document.querySelector('[data-slider="button-prev"]')
-  
+
   const totalElement = document.querySelector('[data-slide-count="total"]');
   const stepElement = document.querySelector('[data-slide-count="step"]');
   const stepsParent = stepElement.parentElement;
