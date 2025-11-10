@@ -141,7 +141,7 @@ a {
   transform: translateY(60svh);
   transform-origin: top;
   will-change: transform;
-  z-index: 2;
+  z-index: 101;
 }
 
 .hero {
