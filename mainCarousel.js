@@ -19,10 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   var carousel = document.querySelector(".main-carousel");
-  if (!carousel) {
-    console.error("El elemento .main-carousel no se encontró en el DOM.");
-    return;
-  }
 
   // Render de tarjetas .card
   var i, art, card;
@@ -45,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var activeElement = null;
   var previousElement = null;
   var nextElement = null;
+
 
   // Inicial: estilos base para imágenes (por si entran ya animadas)
  for (i = 0; i < boxes.length; i++) {
@@ -182,9 +179,9 @@ function horizontalLoop(items, config) {
   var curIndex = 0;
   var center = config.center;
   var pixelsPerSecond = (config.speed || 1) * 100;
-  var snap = config.snap === false ? function (v) { return v; } : gsap.utils.snap(config.snap || 1);
+  var snap = config.snap === false ? function (v) { return v; } : gsap.utils.snap(config.snap || 1); // función de ajusteo para el snap de posición
   var timeOffset = 0;
-  var container = center === true ? items[0].parentNode : (gsap.utils.toArray(center)[0] || items[0].parentNode);
+  var container = center === true ? items[0].parentNode : (gsap.utils.toArray(center)[0] || items[0].parentNode); // Permitir un contenedor personalizado para el centradoZ
   var totalWidth;
   var timeWrap;
   var proxy;
