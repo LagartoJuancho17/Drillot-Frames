@@ -29,6 +29,10 @@ body{
   background-color:var(--color-bg);
 }
 
+nav{
+  z-index: 0;
+}
+
 @media (min-width: 900px){
   body .breakpoint-disclaimer{
   display:none}

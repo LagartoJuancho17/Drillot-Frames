@@ -1,3 +1,4 @@
+
 class ProductPreview {
   constructor({ products, container }) {
     // Group by product ID

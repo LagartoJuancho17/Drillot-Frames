@@ -1,3 +1,4 @@
+
 function preloadImages(imageElements) {
   const promises = [...imageElements].map((img) => {
     if (img.complete) return Promise.resolve() // Already cached

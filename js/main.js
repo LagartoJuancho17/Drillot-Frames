@@ -1,4 +1,5 @@
 // No imports; rely on globals loaded via script tags
+
 window.addEventListener('load', async () => {
   // initialize grid
   new ProductGrid()

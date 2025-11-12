@@ -1,3 +1,4 @@
+
 class ProductGrid {
   constructor() {
     this.ui = {
