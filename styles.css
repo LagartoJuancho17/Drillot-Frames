@@ -902,3 +902,8 @@ footer {
   height: 4rem;
 }
 
+
+
+.trail-container h1{
+  z-index: 2000;
+}
