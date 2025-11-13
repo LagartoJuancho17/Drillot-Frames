@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Manrope:wght@200..800&display=swap");
+
+
 *{
   margin-block:0;
   margin:0;
@@ -21,7 +24,7 @@ img{
   --color-bg: #efefef;
   --color-link: #000;
   --color-link-hover: #000;
-  --page-padding: 1.5rem
+  --page-padding: 1.5rem 
 }
 body{
   margin:0;
@@ -110,7 +113,8 @@ to{
   display:flex;
   flex-direction:column;
   position:relative;
-  font-family:Georgia,Times New Roman,Times,serif
+  z-index: 4;
+  font-family: "Agdasima", sans-serif;
 }
 @media screen and (min-width: 53em){
   .content{
@@ -130,13 +134,14 @@ to{
   flex-direction:row;
   justify-content:center;
   align-items:center;
-  gap:24px}
+  gap:24px
+}
 .shop-categories ul li{
   font-size:20px;
   opacity:.3;
 }
 .shop-categories ul li sup{
-  font-size:.6em
+  font-size:1em
 }
 .shop-categories ul li.--active{
   opacity:1
@@ -249,6 +254,7 @@ img{
 .minimalist-section {
   display: flex;
   justify-content: center;
+  z-index: 3;
 }
 
 /* CONTENEDOR PRINCIPAL */
