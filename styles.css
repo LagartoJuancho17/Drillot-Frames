@@ -320,7 +320,6 @@ nav {
   height: 100svh;
   /*pointer-events: none;*/
   overflow: hidden;
-  z-index: 2;
   font-family: "Agdasima", sans-serif;
 }
 

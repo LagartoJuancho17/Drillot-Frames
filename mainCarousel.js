@@ -148,17 +148,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function horizontalLoop(items, config) {
-  items = gsap.utils.toArray(items);
-  config = config || {};
+  items = gsap.utils.toArray(items); // Convertir los elementos en un array
+  config = config || {}; // Configuración por defecto si no se proporciona ninguna 
 
   var onChange = config.onChange;
   var lastIndex = 0;
 
-  var tl = gsap.timeline({
-    repeat: config.repeat,
-    paused: config.paused,
+  var tl = gsap.timeline({ 
+    repeat: config.repeat, // número de repeticiones del loop 
+    paused: config.paused, // pausar el loop al inicio si se desea 
     defaults: { ease: "none" },
-    onUpdate: onChange && function () {
+    onUpdate: onChange && function () { // función onUpdate para detectar cambios de índice 
       var i = tl.closestIndex();
       if (lastIndex !== i) {
         lastIndex = i;
@@ -166,7 +166,7 @@ function horizontalLoop(items, config) {
       }
     },
     onReverseComplete: function () {
-      tl.totalTime(tl.rawTime() + tl.duration() * 100);
+      tl.totalTime(tl.rawTime() + tl.duration() * 100); // evitar parpadeos al revertir el loop
     }
   });
 
